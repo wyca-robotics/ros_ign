@@ -19,13 +19,6 @@
   <depend>std_srvs</depend>
   <depend>tf2_msgs</depend>
 
-  <!-- Dome -->
-  <depend condition="$IGNITION_VERSION == dome">ignition-msgs6</depend>
-  <depend condition="$IGNITION_VERSION == dome">ignition-transport9</depend>
-  <!-- Citadel (default) -->
-  <depend condition="$IGNITION_VERSION != dome">ignition-msgs5</depend>
-  <depend condition="$IGNITION_VERSION != dome">ignition-transport8</depend>
-
   <build_depend>message_generation</build_depend>
   <exec_depend>message_runtime</exec_depend>
   <test_depend>rostest</test_depend>

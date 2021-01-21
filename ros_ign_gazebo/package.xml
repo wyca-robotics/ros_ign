@@ -10,8 +10,4 @@
   <depend>libgflags-dev</depend>
   <depend>roscpp</depend>
 
-  <!-- Dome -->
-  <depend condition="$IGNITION_VERSION == dome">ignition-gazebo4</depend>
-  <!-- Citadel (default) -->
-  <depend condition="$IGNITION_VERSION != dome">ignition-gazebo3</depend>
 </package>
