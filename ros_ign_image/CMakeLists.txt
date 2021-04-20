@@ -16,34 +16,13 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   sensor_msgs)
 
-# Edifice
-if ("$ENV{IGNITION_VERSION}" STREQUAL "edifice")
-  find_package(ignition-transport10 REQUIRED)
-  set(IGN_TRANSPORT_VER ${ignition-transport10_VERSION_MAJOR})
+find_package(ignition-transport10 REQUIRED)
+set(IGN_TRANSPORT_VER ${ignition-transport10_VERSION_MAJOR})
 
-  find_package(ignition-msgs7 REQUIRED)
-  set(IGN_MSGS_VER ${ignition-msgs7_VERSION_MAJOR})
+find_package(ignition-msgs7 REQUIRED)
+set(IGN_MSGS_VER ${ignition-msgs7_VERSION_MAJOR})
 
-  message(STATUS "Compiling against Ignition Edifice")
-# Dome
-elseif ("$ENV{IGNITION_VERSION}" STREQUAL "dome")
-  find_package(ignition-transport9 REQUIRED)
-  set(IGN_TRANSPORT_VER ${ignition-transport9_VERSION_MAJOR})
-
-  find_package(ignition-msgs6 REQUIRED)
-  set(IGN_MSGS_VER ${ignition-msgs6_VERSION_MAJOR})
-
-  message(STATUS "Compiling against Ignition Dome")
-# Default to Citadel
-else()
-  find_package(ignition-transport8 REQUIRED)
-  set(IGN_TRANSPORT_VER ${ignition-transport8_VERSION_MAJOR})
-
-  find_package(ignition-msgs5 REQUIRED)
-  set(IGN_MSGS_VER ${ignition-msgs5_VERSION_MAJOR})
-
-  message(STATUS "Compiling against Ignition Citadel")
-endif()
+message(STATUS "Compiling against Ignition Edifice")
 
 catkin_package()
 
